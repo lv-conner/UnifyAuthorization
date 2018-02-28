@@ -24,9 +24,8 @@ namespace UnifyAuthorization.EntityMap
         }
         private void ConfigureRelationShip()
         {
-            HasMany(p => p.Members).WithRequired();
-            HasMany(p => p.Permissions).WithRequired();
-            HasRequired(p => p.Company).WithMany(p => p.Roles).HasForeignKey(p => p.CompanyId).WillCascadeOnDelete(false);
+            HasMany(p => p.RoleUsers).WithRequired(p=>p.Role).HasForeignKey(p=>p.RoleId).WillCascadeOnDelete(false);
+            HasMany(p => p.RolePermissions).WithRequired(p=>p.Role).HasForeignKey(p=>p.RoleId).WillCascadeOnDelete(true);
         }
     }
 }

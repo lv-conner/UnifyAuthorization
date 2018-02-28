@@ -8,22 +8,22 @@ using UnifyAuthorization.Domain;
 
 namespace UnifyAuthorization.EntityMap
 {
-    public class RoleUserMap: EntityTypeConfiguration<RoleUser>
+    public class UserPermissionMap:EntityTypeConfiguration<UserPermission>
     {
-        public RoleUserMap()
+        public UserPermissionMap()
         {
-            ToTable("RoleUser").HasKey(p => p.Id);
+            ToTable("UserPermission").HasKey(p => p.Id);
             ConfigureProperty();
             ConfigureRelationShip();
         }
-        private void ConfigureProperty()
+        public void ConfigureProperty()
         {
             Property(p => p.RowVersion).IsRowVersion();
         }
         private void ConfigureRelationShip()
         {
-            HasRequired(p => p.User).WithMany(p => p.RoleUsers).HasForeignKey(p => p.UserId).WillCascadeOnDelete(true);
-            HasRequired(p => p.Role).WithMany(p => p.RoleUsers).HasForeignKey(p => p.RoleId).WillCascadeOnDelete(false);
+            HasRequired(p => p.User).WithMany(p => p.UserPermission).HasForeignKey(p => p.UserId).WillCascadeOnDelete(true);
+            HasRequired(p => p.Function).WithMany(p => p.UserPermissions).HasForeignKey(p => p.FunctionId).WillCascadeOnDelete(true);
         }
     }
 }

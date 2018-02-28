@@ -7,25 +7,26 @@ using System.Threading.Tasks;
 namespace UnifyAuthorization.Domain
 {
     /// <summary>
-    /// 功能模型
+    /// 功能操作
     /// </summary>
-    public class FunctionModel:AggregateRoot<Guid>
+    public class Function:AggregateRoot<Guid>
     {
         public string SystemNo { get; private set; }
         public string ModuleNo { get; private set; }
         public string ModuleName { get; private set; }
         public string ActionNo { get; private set; }
         public string ActionName { get; private set; }
-
         public Guid? CreateUserId { get; private set; }
         public DateTime? CreateTime { get; private set; }
-        public virtual ICollection<RolePermission> RolePermission { get; private set; }
-        public FunctionModel()
+        public virtual ICollection<RolePermission> RolePermissions { get; private set; }
+        public virtual ICollection<UserPermission> UserPermissions { get; private set; }
+        public Function()
         {
-            RolePermission = new HashSet<RolePermission>();
+            RolePermissions = new HashSet<RolePermission>();
+            UserPermissions = new HashSet<UserPermission>();
         }
 
-        public FunctionModel(string system, string module, string moduleName, string action, string actionName, Guid createUserId)
+        public Function(string system, string module, string moduleName, string action, string actionName, Guid createUserId)
             :this()
         {
             SystemNo = system;

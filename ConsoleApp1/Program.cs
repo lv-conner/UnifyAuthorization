@@ -13,9 +13,17 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            //Init();
+
             using (var db = new UnifyContext())
             {
+                //Console.WriteLine(db.Database.CreateIfNotExists());
+                //var User = db.Set<User>().First();
+                //var Role = db.Set<Role>().First();
                 var company = db.Set<Company>().First();
+                db.Set<Company>().Remove(company);
+                db.SaveChanges();
+                Console.ReadKey();
             }
         }
 
@@ -33,12 +41,14 @@ namespace ConsoleApp1
                 var Role = new Role(Company.Id, "Admin", "Admin", User.Id);
                 db.Set<Role>().Add(Role);
                 //var Role = db.Set<Role>().First();
-                var Function = new FunctionModel("Pms", "Project", "项目", "View", "View", User.Id);
-                db.Set<FunctionModel>().Add(Function);
+                var Function = new Function("Pms", "Project", "项目", "View", "View", User.Id);
+                db.Set<Function>().Add(Function);
                 var RoleUser = new RoleUser(Role.Id, User.Id, User.Id);
                 db.Set<RoleUser>().Add(RoleUser);
                 var RolePermission = new RolePermission(Role.Id, Function.Id, User.Id);
                 db.Set<RolePermission>().Add(RolePermission);
+                var UserPermission = new UserPermission(User.Id, Function.Id, User.Id);
+                db.Set<UserPermission>().Add(UserPermission);
                 db.SaveChanges();
                 Console.WriteLine("Save successful");
                 Console.ReadLine();

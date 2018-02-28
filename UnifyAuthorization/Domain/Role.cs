@@ -18,14 +18,14 @@ namespace UnifyAuthorization.Domain
         public Guid? LastModifyUserId { get; private set; }
         public DateTime? LastModifyTime { get; private set; }
 
-        public virtual ICollection<RoleUser> Members { get; private set; }
+        public virtual ICollection<RoleUser> RoleUsers { get; private set; }
 
-        public virtual ICollection<RolePermission> Permissions { get; private set; }
+        public virtual ICollection<RolePermission> RolePermissions { get; private set; }
 
         public Role()
         {
-            Members = new HashSet<RoleUser>();
-            Permissions = new HashSet<RolePermission>();
+            RoleUsers = new HashSet<RoleUser>();
+            RolePermissions = new HashSet<RolePermission>();
         }
 
         public Role(Guid companyId, string roleName, string description, Guid createUserId)
@@ -51,43 +51,43 @@ namespace UnifyAuthorization.Domain
 
         public void AddMember(Guid userId, Guid createUserId)
         {
-            if (Members.FirstOrDefault(m => m.UserId == userId) == null)
-                Members.Add(new RoleUser(Id, userId, createUserId));
+            if (RoleUsers.FirstOrDefault(m => m.UserId == userId) == null)
+                RoleUsers.Add(new RoleUser(Id, userId, createUserId));
         }
 
         public void RemoveMember(Guid userId)
         {
-            RoleUser find = Members.FirstOrDefault(m => m.RoleId == Id && m.UserId == userId);
+            RoleUser find = RoleUsers.FirstOrDefault(m => m.RoleId == Id && m.UserId == userId);
             if (find != null)
             {
                 find.RoleId = Guid.Empty;
-                Members.Remove(find);
+                RoleUsers.Remove(find);
             }
         }
 
         public void AddPermission(Guid actionId, Guid createUserId)
         {
-            if (Permissions.FirstOrDefault(m => m.ActionId == actionId) == null)
-                Permissions.Add(new RolePermission(Id, actionId, createUserId));
+            if (RolePermissions.FirstOrDefault(m => m.FunctionId == actionId) == null)
+                RolePermissions.Add(new RolePermission(Id, actionId, createUserId));
         }
 
         public void RemovePermission(Guid actionId)
         {
-            RolePermission find = Permissions.FirstOrDefault(m => m.RoleId == Id && m.ActionId == actionId);
+            RolePermission find = RolePermissions.FirstOrDefault(m => m.RoleId == Id && m.FunctionId == actionId);
             if (find != null)
             {
                 find.RoleId = Guid.Empty;
-                Permissions.Remove(find);
+                RolePermissions.Remove(find);
             }
         }
 
         public void SavePermission(string actionIds, Guid createUserId)
         {
-            foreach (RolePermission p in Permissions)
+            foreach (RolePermission p in RolePermissions)
             {
                 p.RoleId = Guid.Empty;
             }
-            Permissions.Clear();
+            RolePermissions.Clear();
             if (actionIds != null)
             {
                 string[] actions = actionIds.Split(',');

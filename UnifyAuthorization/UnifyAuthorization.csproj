@@ -48,23 +48,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\AggregateRoot.cs" />
+    <Compile Include="Domain\BasePermission.cs" />
     <Compile Include="Domain\Company.cs" />
-    <Compile Include="Domain\FunctionModel.cs" />
+    <Compile Include="Domain\Function.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="Domain\Role.cs" />
     <Compile Include="Domain\RolePermission.cs" />
     <Compile Include="Domain\RoleUser.cs" />
     <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\UserPermission.cs" />
     <Compile Include="EntityMap\CompanyMap.cs" />
-    <Compile Include="EntityMap\FunctionModelMap.cs" />
+    <Compile Include="EntityMap\FunctionMap.cs" />
     <Compile Include="EntityMap\RoleMap.cs" />
     <Compile Include="EntityMap\RolePermissionMap.cs" />
     <Compile Include="EntityMap\RoleUserMap.cs" />
     <Compile Include="EntityMap\UserMap.cs" />
-    <Compile Include="Migrations\201802270403312_InitUnifyAuthorization.cs" />
-    <Compile Include="Migrations\201802270403312_InitUnifyAuthorization.Designer.cs">
-      <DependentUpon>201802270403312_InitUnifyAuthorization.cs</DependentUpon>
-    </Compile>
+    <Compile Include="EntityMap\UserPermissionMap.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnifyContext.cs" />
@@ -72,11 +71,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802270403312_InitUnifyAuthorization.resx">
-      <DependentUpon>201802270403312_InitUnifyAuthorization.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

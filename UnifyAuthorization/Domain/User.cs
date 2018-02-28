@@ -34,14 +34,17 @@ namespace UnifyAuthorization.Domain
         public Guid? LastModifyUserId { get; private set; }
         public DateTime? LastModifyTime { get; private set; }
 
-        public virtual ICollection<RoleUser> Roles { get; private set; }
+        public virtual ICollection<RoleUser> RoleUsers { get; private set; }
+        public virtual ICollection<UserPermission> UserPermission { get; set; }
 
         public User()
         {
-            Roles = new HashSet<RoleUser>();
+            RoleUsers = new HashSet<RoleUser>();
+            UserPermission = new HashSet<UserPermission>();
         }
 
         public User(Guid companyId, string department, string userNo, string userName, string password, string duty, string phoneNo, string mail, Guid? createUserId)
+            :this()
         {
             Id = Guid.NewGuid();
             CompanyId = companyId;

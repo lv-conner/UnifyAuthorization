@@ -8,11 +8,11 @@ using UnifyAuthorization.Domain;
 
 namespace UnifyAuthorization.EntityMap
 {
-    public class FunctionModelMap: EntityTypeConfiguration<FunctionModel>
+    public class FunctionMap: EntityTypeConfiguration<Function>
     {
-        public FunctionModelMap()
+        public FunctionMap()
         {
-            ToTable("FunctionModel").HasKey(p => p.Id);
+            ToTable("Function").HasKey(p => p.Id);
             ConfigureProperty();
             ConfiureRelationship();
         }
@@ -25,12 +25,12 @@ namespace UnifyAuthorization.EntityMap
             Property(p => p.ActionNo).HasMaxLength(50);
             Property(p => p.ActionName).HasMaxLength(50);
             Property(p => p.RowVersion).IsRowVersion();
-
         }
 
         private void ConfiureRelationship()
         {
-            HasMany(p => p.RolePermission).WithRequired();
+            HasMany(p => p.UserPermissions).WithRequired(p => p.Function).HasForeignKey(p => p.FunctionId).WillCascadeOnDelete(true);
+            HasMany(p => p.RolePermissions).WithRequired(p => p.Function).HasForeignKey(p => p.FunctionId).WillCascadeOnDelete(true);
         }
     }
 }

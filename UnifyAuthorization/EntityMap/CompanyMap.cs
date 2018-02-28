@@ -28,8 +28,9 @@ namespace UnifyAuthorization.EntityMap
 
         private void ConfiureRelationship()
         {
-            HasMany(p => p.Users).WithRequired();
-            HasMany(p => p.Roles).WithRequired();
+            //HasMany:一个公司下有多个用户，WithRequired：一个用户一定属于一个公司，HasForeignKey：指定用户表中的外键，WillCascadeOnDelete：启用级联删除。
+            HasMany(p => p.Users).WithRequired(p => p.Company).HasForeignKey(p=>p.CompanyId).WillCascadeOnDelete(true);
+            HasMany(p => p.Roles).WithRequired(p => p.Company).HasForeignKey(p=>p.CompanyId).WillCascadeOnDelete(true);
         }
     }
 }

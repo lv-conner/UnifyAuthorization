@@ -12,17 +12,18 @@ namespace UnifyAuthorization
     {
         public UnifyContext():base("UnifyContext")
         {
-
+            
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CompanyMap());
-            modelBuilder.Configurations.Add(new FunctionModelMap());
+            modelBuilder.Configurations.Add(new FunctionMap());
             modelBuilder.Configurations.Add(new RoleMap());
             modelBuilder.Configurations.Add(new RolePermissionMap());
             modelBuilder.Configurations.Add(new RoleUserMap());
             modelBuilder.Configurations.Add(new UserMap());
+            modelBuilder.Configurations.Add(new UserPermissionMap());
             base.OnModelCreating(modelBuilder);
         }
     }

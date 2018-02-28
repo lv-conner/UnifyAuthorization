@@ -10,9 +10,6 @@ namespace UnifyAuthorization.Domain
         public string Url { get; private set; }
         public string Remark { get; private set; }
         public bool IsActive { get; private set; }
-        /// <summary>
-        /// 注册公司的同时,需添加管理员资料,然后设置公司管理员.
-        /// </summary>
         public Guid Administrator { get; private set; }
 
         public DateTime? CreatorTime { get; private set; }
