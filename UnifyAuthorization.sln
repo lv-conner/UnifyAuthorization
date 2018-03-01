@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnifyAuthorization", "UnifyAuthorization\UnifyAuthorization.csproj", "{EB7A269D-015E-42F8-B541-335C7D43DE07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lfg.UnifyAuthorization", "UnifyAuthorization\Lfg.UnifyAuthorization.csproj", "{EB7A269D-015E-42F8-B541-335C7D43DE07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnifyAuthorizaiton.Test", "UnifyAuthorizaiton.Test\UnifyAuthorizaiton.Test.csproj", "{1FA4AC69-BACC-4330-9B2B-D30ED3B41B5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{F19A860E-2894-4830-B4F3-434EA3A42096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lfg.UnifyAuthorization.Repository", "Lfg.UnifyAuthorization.Repository\Lfg.UnifyAuthorization.Repository.csproj", "{4F76BE93-8048-4E0C-8FEC-2AD0E11016F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lfg.UnifyAuthorization.Domain", "Lfg.UnifyAuthorization.Domain\Lfg.UnifyAuthorization.Domain.csproj", "{8F443893-CF9D-4B8E-AEA6-993FB3F28311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lfg.UnifyAuthorization.Application", "Lfg.UnifyAuthorization.Application\Lfg.UnifyAuthorization.Application.csproj", "{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{F19A860E-2894-4830-B4F3-434EA3A42096}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F19A860E-2894-4830-B4F3-434EA3A42096}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F19A860E-2894-4830-B4F3-434EA3A42096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F76BE93-8048-4E0C-8FEC-2AD0E11016F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F76BE93-8048-4E0C-8FEC-2AD0E11016F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F76BE93-8048-4E0C-8FEC-2AD0E11016F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F76BE93-8048-4E0C-8FEC-2AD0E11016F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F443893-CF9D-4B8E-AEA6-993FB3F28311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F443893-CF9D-4B8E-AEA6-993FB3F28311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F443893-CF9D-4B8E-AEA6-993FB3F28311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F443893-CF9D-4B8E-AEA6-993FB3F28311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UnifyAuthorization.Domain
+namespace Lfg.UnifyAuthorization.Domain
 {
     public class Company : AggregateRoot<Guid>
     {

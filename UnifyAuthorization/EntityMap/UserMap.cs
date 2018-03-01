@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using UnifyAuthorization.Domain;
+using Lfg.UnifyAuthorization.Domain;
 
-namespace UnifyAuthorization.EntityMap
+namespace Lfg.UnifyAuthorization.EntityMap
 {
     public class UserMap:EntityTypeConfiguration<User>
     {

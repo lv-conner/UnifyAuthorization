@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnifyAuthorization.Domain
+namespace Lfg.UnifyAuthorization.Domain
 {
     public class RoleUser : AggregateRoot<Guid>
     {

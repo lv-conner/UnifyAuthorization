@@ -4,8 +4,8 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnifyAuthorization;
-using UnifyAuthorization.Domain;
+using Lfg.UnifyAuthorization;
+using Lfg.UnifyAuthorization.Domain;
 
 namespace ConsoleApp1
 {
@@ -13,13 +13,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Init();
+            Init();
 
             using (var db = new UnifyContext())
             {
                 //Console.WriteLine(db.Database.CreateIfNotExists());
-                //var User = db.Set<User>().First();
-                //var Role = db.Set<Role>().First();
+                var User = db.Set<User>().Include("Company").First();
+                var Role = db.Set<Role>().First();
                 var company = db.Set<Company>().First();
                 db.Set<Company>().Remove(company);
                 db.SaveChanges();

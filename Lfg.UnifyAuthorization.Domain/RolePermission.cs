@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UnifyAuthorization.Domain
+namespace Lfg.UnifyAuthorization.Domain
 {
     public class RolePermission: BasePermission
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{EB7A269D-015E-42F8-B541-335C7D43DE07}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnifyAuthorization</RootNamespace>
-    <AssemblyName>UnifyAuthorization</AssemblyName>
+    <RootNamespace>Lfg.UnifyAuthorization</RootNamespace>
+    <AssemblyName>Lfg.UnifyAuthorization</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,16 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\AggregateRoot.cs" />
-    <Compile Include="Domain\BasePermission.cs" />
-    <Compile Include="Domain\Company.cs" />
-    <Compile Include="Domain\Function.cs" />
-    <Compile Include="Domain\IAggregateRoot.cs" />
-    <Compile Include="Domain\Role.cs" />
-    <Compile Include="Domain\RolePermission.cs" />
-    <Compile Include="Domain\RoleUser.cs" />
-    <Compile Include="Domain\User.cs" />
-    <Compile Include="Domain\UserPermission.cs" />
     <Compile Include="EntityMap\CompanyMap.cs" />
     <Compile Include="EntityMap\FunctionMap.cs" />
     <Compile Include="EntityMap\RoleMap.cs" />
@@ -71,6 +61,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lfg.UnifyAuthorization.Domain\Lfg.UnifyAuthorization.Domain.csproj">
+      <Project>{8f443893-cf9d-4b8e-aea6-993fb3f28311}</Project>
+      <Name>Lfg.UnifyAuthorization.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

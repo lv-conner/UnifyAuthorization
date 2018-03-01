@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F19A860E-2894-4830-B4F3-434EA3A42096}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp1</RootNamespace>
-    <AssemblyName>ConsoleApp1</AssemblyName>
+    <ProjectGuid>{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lfg.UnifyAuthorization.Application</RootNamespace>
+    <AssemblyName>Lfg.UnifyAuthorization.Application</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,15 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,21 +41,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Code\Extension.cs" />
+    <Compile Include="Code\OperatorModel.cs" />
+    <Compile Include="Code\OperatorProvider.cs" />
+    <Compile Include="Code\PermissionModel.cs" />
+    <Compile Include="CompanyApp.cs" />
+    <Compile Include="Dto\CompanyActiveDto.cs" />
+    <Compile Include="Dto\CompanyInputDto.cs" />
+    <Compile Include="Dto\FunctionInputDto.cs" />
+    <Compile Include="Dto\RoleInputDto.cs" />
+    <Compile Include="Dto\RolePermissionInputDto.cs" />
+    <Compile Include="Dto\RoleUserInputDto.cs" />
+    <Compile Include="Dto\UserInputDto.cs" />
+    <Compile Include="Dto\UserLoginDto.cs" />
+    <Compile Include="Dto\UserModifPwdDto.cs" />
+    <Compile Include="FunctionApp.cs" />
+    <Compile Include="Interface\IApp.cs" />
+    <Compile Include="Interface\ICompanyApp.cs" />
+    <Compile Include="Interface\IFunctionApp.cs" />
+    <Compile Include="Code\IOperatorProvider.cs" />
+    <Compile Include="Interface\IRoleApp.cs" />
+    <Compile Include="Interface\IUserApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Compile Include="Dto\UserPermissionInputDto.cs" />
+    <Compile Include="RoleApp.cs" />
+    <Compile Include="UserApp.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lfg.UnifyAuthorization.Domain\Lfg.UnifyAuthorization.Domain.csproj">
-      <Project>{8f443893-cf9d-4b8e-aea6-993fb3f28311}</Project>
+      <Project>{8F443893-CF9D-4B8E-AEA6-993FB3F28311}</Project>
       <Name>Lfg.UnifyAuthorization.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UnifyAuthorization\Lfg.UnifyAuthorization.csproj">
-      <Project>{eb7a269d-015e-42f8-b541-335c7d43de07}</Project>
-      <Name>Lfg.UnifyAuthorization</Name>
+    <ProjectReference Include="..\Lfg.UnifyAuthorization.Repository\Lfg.UnifyAuthorization.Repository.csproj">
+      <Project>{4f76be93-8048-4e0c-8fec-2ad0e11016f6}</Project>
+      <Name>Lfg.UnifyAuthorization.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

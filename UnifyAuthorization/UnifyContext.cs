@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnifyAuthorization.EntityMap;
+using Lfg.UnifyAuthorization.EntityMap;
 
-namespace UnifyAuthorization
+namespace Lfg.UnifyAuthorization
 {
     public class UnifyContext: DbContext
     {

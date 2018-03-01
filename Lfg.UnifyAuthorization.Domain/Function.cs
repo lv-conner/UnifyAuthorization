@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnifyAuthorization.Domain
+namespace Lfg.UnifyAuthorization.Domain
 {
     /// <summary>
     /// 功能操作
@@ -18,6 +18,8 @@ namespace UnifyAuthorization.Domain
         public string ActionName { get; private set; }
         public Guid? CreateUserId { get; private set; }
         public DateTime? CreateTime { get; private set; }
+        public Guid? LastModifyUserId { get; private set; }
+        public DateTime? LastModifyTime { get; private set; }
         public virtual ICollection<RolePermission> RolePermissions { get; private set; }
         public virtual ICollection<UserPermission> UserPermissions { get; private set; }
         public Function()
@@ -26,18 +28,30 @@ namespace UnifyAuthorization.Domain
             UserPermissions = new HashSet<UserPermission>();
         }
 
-        public Function(string system, string module, string moduleName, string action, string actionName, Guid createUserId)
+        public Function(string systemNo, string moduleNo, string moduleName, string actionNo, string actionName, Guid createUserId)
             :this()
         {
-            SystemNo = system;
-            ModuleNo = module;
+            SystemNo = systemNo;
+            ModuleNo = moduleNo;
             ModuleName = moduleName;
-            ActionNo = action;
+            ActionNo = actionNo;
             ActionName = actionName;
 
             Id = Guid.NewGuid();
             CreateTime = DateTime.Now;
             CreateUserId = createUserId;
+        }
+
+        public void Update(string systemNo, string moduleNo, string moduleName, string actionNo, string actionName, Guid modifiedId)
+        {
+            SystemNo = systemNo;
+            ModuleNo = moduleNo;
+            ModuleName = moduleName;
+            ActionNo = actionNo;
+            ActionName = actionName;
+
+            LastModifyUserId = modifiedId;
+            LastModifyTime = DateTime.Now;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UnifyAuthorization;
-using UnifyAuthorization.Domain;
+using Lfg.UnifyAuthorization;
+using Lfg.UnifyAuthorization.Domain;
 using System.Linq;
 
 namespace UnifyAuthorizaiton.Test

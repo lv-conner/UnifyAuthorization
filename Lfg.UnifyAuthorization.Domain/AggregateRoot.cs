@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnifyAuthorization.Base;
+using Lfg.UnifyAuthorization.Base;
 
-namespace UnifyAuthorization.Domain
+namespace Lfg.UnifyAuthorization.Domain
 {
     public class AggregateRoot<TId> : IAggregateRoot
     {

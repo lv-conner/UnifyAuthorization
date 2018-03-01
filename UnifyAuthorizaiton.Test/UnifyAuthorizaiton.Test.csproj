@@ -63,9 +63,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UnifyAuthorization\UnifyAuthorization.csproj">
+    <ProjectReference Include="..\Lfg.UnifyAuthorization.Domain\Lfg.UnifyAuthorization.Domain.csproj">
+      <Project>{8f443893-cf9d-4b8e-aea6-993fb3f28311}</Project>
+      <Name>Lfg.UnifyAuthorization.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnifyAuthorization\Lfg.UnifyAuthorization.csproj">
       <Project>{eb7a269d-015e-42f8-b541-335c7d43de07}</Project>
-      <Name>UnifyAuthorization</Name>
+      <Name>Lfg.UnifyAuthorization</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

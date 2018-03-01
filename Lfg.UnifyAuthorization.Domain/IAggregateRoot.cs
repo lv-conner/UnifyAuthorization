@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnifyAuthorization.Base
+namespace Lfg.UnifyAuthorization.Base
 {
     public interface IAggregateRoot
     {

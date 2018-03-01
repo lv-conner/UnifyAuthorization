@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnifyAuthorization.Domain;
+using Lfg.UnifyAuthorization.Domain;
 
-namespace UnifyAuthorization.EntityMap
+namespace Lfg.UnifyAuthorization.EntityMap
 {
     public class CompanyMap: EntityTypeConfiguration<Company>
     {
