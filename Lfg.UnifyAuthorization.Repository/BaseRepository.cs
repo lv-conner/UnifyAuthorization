@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace Lfg.UnifyAuthorization.Repository
 {
-    public class BaseRepository<TEntity> : IRepository<TEntity>,IDisposable where TEntity : class, IAggregateRoot
+    public abstract class BaseRepository<TEntity> : IRepository<TEntity>,IDisposable where TEntity : class, IAggregateRoot
     {
         protected virtual DbContext DbContext { get; set; }
         protected virtual DbSet<TEntity> DbSet { get => DbContext.Set<TEntity>(); }

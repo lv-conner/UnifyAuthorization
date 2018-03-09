@@ -10,6 +10,10 @@ namespace Lfg.UnifyAuthorization.Application.Operator
 {
     public class OperatorProvider : IOperatorProvider
     {
+        public OperatorProvider()
+        {
+
+        }
         public OperatorModel Current => throw new NotImplementedException();
 
         public ICollection<PermissionModel> CurrentPermission => throw new NotImplementedException();

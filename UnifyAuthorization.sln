@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lfg.UnifyAuthorization.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lfg.UnifyAuthorization.Application", "Lfg.UnifyAuthorization.Application\Lfg.UnifyAuthorization.Application.csproj", "{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lfg.UnifyAuthorization.WebApi", "Lfg.UnifyAuthorization.WebApi\Lfg.UnifyAuthorization.WebApi.csproj", "{35E2AA01-4B5C-4F87-A373-7381EAC70BE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AAE11AC-2D09-4BAB-86EB-CBBF649AAEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E2AA01-4B5C-4F87-A373-7381EAC70BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E2AA01-4B5C-4F87-A373-7381EAC70BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E2AA01-4B5C-4F87-A373-7381EAC70BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E2AA01-4B5C-4F87-A373-7381EAC70BE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

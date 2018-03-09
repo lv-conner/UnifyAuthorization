@@ -41,10 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\DefaultServicerProvider.cs" />
+    <Compile Include="Code\DependencyResolver.cs" />
     <Compile Include="Code\Extension.cs" />
     <Compile Include="Code\OperatorModel.cs" />
     <Compile Include="Code\OperatorProvider.cs" />
     <Compile Include="Code\PermissionModel.cs" />
+    <Compile Include="Code\ServiceProviderExtension.cs" />
     <Compile Include="CompanyApp.cs" />
     <Compile Include="Dto\CompanyActiveDto.cs" />
     <Compile Include="Dto\CompanyInputDto.cs" />

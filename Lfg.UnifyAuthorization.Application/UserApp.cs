@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Lfg.UnifyAuthorization.Application.Dto;
 using Lfg.UnifyAuthorization.Application.Extension;
 using Lfg.UnifyAuthorization.Application.Interface;
-using Lfg.UnifyAuthorization.Application.Operator;
 using Lfg.UnifyAuthorization.Application.Operator.Interface;
 using Lfg.UnifyAuthorization.Domain;
 using Lfg.UnifyAuthorization.Repository.Interface;
@@ -40,7 +39,6 @@ namespace Lfg.UnifyAuthorization.Application
             });
 
         }
-
 
         public Guid SubmitForm(UserInputDto obj)
         {
